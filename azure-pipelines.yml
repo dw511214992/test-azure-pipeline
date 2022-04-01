@@ -25,9 +25,15 @@ stages:
 
           - bash: |
               echo $(Agent.BuildDirectory)
+              echo $(Build.ArtifactStagingDirectory)
             displayName: 'Echo'
 
           - task: PublishPipelineArtifact@1
             inputs:
               artifactName: sdkAPIViewArtifact
-              targetPath: "$(Agent.BuildDirectory)/generated"
+              targetPath: "$(Agent.BuildDirectory)/test"
+
+          - bash: |
+              ls -la $(Build.ArtifactStagingDirectory)/
+              ls -la $(Build.ArtifactStagingDirectory)/sdkAPIViewArtifact/
+              displayName: 'ls'
