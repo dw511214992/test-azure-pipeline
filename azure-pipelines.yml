@@ -34,6 +34,6 @@ stages:
               targetPath: "test"
 
           - bash: |
-              ls -la $(Build.ArtifactStagingDirectory)/
-              ls -la $(Build.ArtifactStagingDirectory)/sdkAPIViewArtifact/
-              displayName: 'ls'
+              cd /home/vsts/work
+              find . -name "test"
+              displayName: 'find'
