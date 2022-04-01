@@ -31,7 +31,7 @@ stages:
           - task: PublishPipelineArtifact@1
             inputs:
               artifactName: sdkAPIViewArtifact
-              targetPath: "$(Agent.BuildDirectory)/test"
+              targetPath: "test"
 
           - bash: |
               ls -la $(Build.ArtifactStagingDirectory)/
