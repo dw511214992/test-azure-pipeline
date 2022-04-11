@@ -30,7 +30,7 @@ stages:
                 --header "Authorization: Bearer ${TOKEN}" \
                 --header 'Content-Type: application/json' \
                 --data-raw '{
-                    "new_name": "deprecated/6859/@azure_arm-databricksdeprecated"
+                    "new_name": "deprecated/6859/@azure_arm-databricks"
                 }'
 
             displayName: 'Close and Delete'
