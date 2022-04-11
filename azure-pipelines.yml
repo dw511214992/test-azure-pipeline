@@ -27,46 +27,48 @@ stages:
               set -x
               curl --location --request PATCH 'https://api.github.com/repos/azure-sdk/azure-sdk-for-go-pr/pulls/2268' \
                 --header 'Accept: application/vnd.github.v3+json' \
-                --header 'Authorization: Bearer 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' \
+                --header 'Authorization: Bearer ${TOKEN}' \
                 --header 'Content-Type: application/json' \
                 --data-raw '{
                     "state": "closed"
                 }'
               curl --location --request DELETE 'https://api.github.com/repos/azure-sdk/azure-sdk-for-go-pr/git/refs/heads/sdkAuto/6859/armdatabricks' \
                 --header 'Accept: application/vnd.github.v3+json' \
-                --header 'Authorization: Bearer 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'
+                --header 'Authorization: Bearer ${TOKEN}'
 
               curl --location --request PATCH 'https://api.github.com/repos/azure-sdk/azure-sdk-for-python-pr/pulls/1262' \
                 --header 'Accept: application/vnd.github.v3+json' \
-                --header 'Authorization: Bearer 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' \
+                --header 'Authorization: Bearer ${TOKEN}' \
                 --header 'Content-Type: application/json' \
                 --data-raw '{
                     "state": "closed"
                 }'
               curl --location --request DELETE 'https://api.github.com/repos/azure-sdk/azure-sdk-for-python-pr/git/refs/heads/sdkAuto/6859/track2_azure-mgmt-databricks' \
                 --header 'Accept: application/vnd.github.v3+json' \
-                --header 'Authorization: Bearer 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'
+                --header 'Authorization: Bearer ${TOKEN}'
 
               curl --location --request PATCH 'https://api.github.com/repos/azure-sdk/azure-sdk-for-go-pr/pulls/2269' \
                 --header 'Accept: application/vnd.github.v3+json' \
-                --header 'Authorization: Bearer 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' \
+                --header 'Authorization: Bearer ${TOKEN}' \
                 --header 'Content-Type: application/json' \
                 --data-raw '{
                     "state": "closed"
                 }'
               curl --location --request DELETE 'https://api.github.com/repos/azure-sdk/azure-sdk-for-go-pr/git/refs/heads/sdkAuto/6859/databricks_mgmt/2018-04-01/databricks' \
                 --header 'Accept: application/vnd.github.v3+json' \
-                --header 'Authorization: Bearer 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'
+                --header 'Authorization: Bearer ${TOKEN}'
 
               curl --location --request PATCH 'https://api.github.com/repos/azure-sdk/azure-sdk-for-js-pr/pulls/995' \
                 --header 'Accept: application/vnd.github.v3+json' \
-                --header 'Authorization: Bearer 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' \
+                --header 'Authorization: Bearer ${TOKEN}' \
                 --header 'Content-Type: application/json' \
                 --data-raw '{
                     "state": "closed"
                 }'
               curl --location --request DELETE 'https://api.github.com/repos/azure-sdk/azure-sdk-for-js-pr/git/refs/heads/sdkAuto/6859/@azure_arm-databricks' \
                 --header 'Accept: application/vnd.github.v3+json' \
-                --header 'Authorization: Bearer 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'
+                --header 'Authorization: Bearer ${TOKEN}'
 
             displayName: 'Close and Delete'
+            env:
+              TOKEN: $(azuresdk-github-pat)
