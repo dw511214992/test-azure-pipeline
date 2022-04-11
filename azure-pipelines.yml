@@ -27,7 +27,7 @@ stages:
               set -x
               curl --location --request POST 'https://api.github.com/repos/azure-sdk/azure-sdk-for-js-pr/branches/sdkAuto/6859/@azure_arm-databricks/rename' \
                 --header 'Accept: application/vnd.github.v3+json' \
-                --header "Authorization: Bearer ${TOKEN}"" \
+                --header "Authorization: Bearer ${TOKEN}" \
                 --header 'Content-Type: application/json' \
                 --data-raw '{
                     "new_name": "sdkAuto/6859/@azure_arm-databricks/deprecated"
