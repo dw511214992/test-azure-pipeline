@@ -24,8 +24,9 @@ stages:
             persistCredentials: true
 
           - bash: |
-              node dist/main.js
+              whoami
+              id -u
+              id -g
 
             displayName: 'Rename branch'
-            env:
-              TOKEN: $(azuresdk-github-pat)
+
